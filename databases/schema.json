@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "データベースの名前。"
+    },
+    "overview": {
+      "type": "string",
+      "description": "データベースの目的や説明。公式からの引用やその翻訳。"
+    },
+    "statistics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "収載されているエンティティの種類（TODO: BioLinkのカテゴリーを極力採用してenumにする）"
+          },
+          "number": {
+            "type": "integer",
+            "description": "収載されているエンティティの数"
+          },
+          "ontologies": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "収載されているエンティティに対応付けられるオントロジーのリスト"
+          }
+        },
+        "required": ["category", "number"]
+      }
+    },
+    "category": {
+      "type": "string",
+      "enum": ["primary", "secondary"],
+      "description": "DBの区分。一次情報のみで構成した一次DBか二次情報を含む二次DBか。"
+    },
+    "sources": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "情報源。一次DBなら実験ID、二次DBの場合は他DBの名前やURL。"
+    },
+    "related_articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "doi": {"type": "string"}
+        },
+        "required": ["doi"]
+      }
+    },
+    "maintainers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "organization": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "使用されているライセンス区分。(TODO: Integbioのライセンス区分を採用する)"
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "string"
+          },
+          "release_date": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": ["number"]
+      }
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file_name": {"type": "string"},
+          "file_type": {"type": "string"},
+          "accessor": {"type": "string"},
+          "xref": {"type": "string"}
+        },
+        "required": ["file_name", "file_type", "accessor", "xref"]
+      }
+    }
+  },
+  "required": ["name"]
+  }
+}
