@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "gene_concept_id": [
+      "http://www.genenames.org/",
+      "https://www.ncbi.nlm.nih.gov/gene/",
+      "https://www.ensembl.org/"
+    ],
+    "interactionSourceDB": "",
+    "interactionSourceVersion": "",
+    "interactionType": "",
+    "interactionScore": "",
+    "drug_concept_id": [
+      "https://www.nlm.nih.gov/research/umls/rxnorm/index.html",
+      "https://ncithesaurus.nci.nih.gov/",
+      "https://go.drugbank.com/"
+    ]
+  }
+}
