@@ -1,18 +1,48 @@
 {
-  "@context": {
-    "gene_concept_id": [
-      "http://www.genenames.org/",
-      "https://www.ncbi.nlm.nih.gov/gene/",
-      "https://www.ensembl.org/"
-    ],
-    "interactionSourceDB": "",
-    "interactionSourceVersion": "",
-    "interactionType": "",
-    "interactionScore": "",
-    "drug_concept_id": [
-      "https://www.nlm.nih.gov/research/umls/rxnorm/index.html",
-      "https://ncithesaurus.nci.nih.gov/",
-      "https://go.drugbank.com/"
-    ]
-  }
+    "@context": {
+        "gene_concept_id": {
+            "@context": {
+                "hgnc_id": "https://identifiers.org/hgnc/",
+                "ncbigene_id": "https://identifiers.org/ncbigene/",
+                "ensembl_id": "https://identifiers.org/ensembl/"
+            }
+        },
+        "interactionSourceDB": {"@type": "xsd:string"},
+        "interactionSourceVersion": {"@type": "xsd:string"},
+        "interactionType": {
+            "@context": {
+                "inhibitor": "",
+                "agonist": "",
+                "blocker": "",
+                "positive modulator": "",
+                "modulator": "",
+                "binder": "",
+                "other/unknown": "",
+                "negative modulator": "",
+                "activator": "",
+                "antibody": "",
+                "cleavage": "",
+                "potentiator": "",
+                "vaccine": "",
+                "inverse agonist": "",
+                "immunotherapy": "",
+                "antisense oligonucleotide": ""
+            }
+        },
+        "interactionScore": {"@type": "xsd:string"},
+        "drug_concept_id": {
+            "@context": {
+                "rxcui_id": "https://rxnav.nlm.nih.gov/id/rxnorm/",
+                "ncit_id": "https://identifiers.org/ncit/",
+                "drugbank_id": "https://identifiers.org/drugbank/",
+                "chembl_id": "https://identifiers.org/chembl/",
+                "iuphar.ligand_id": "https://identifiers.org/iuphar.ligand/",
+                "wikidata_id": "https://identifiers.org/wikidata/",
+                "hemonc_id": "",
+                "drugsatfda.nda_id": "",
+                "chemidplus_id": "https://identifiers.org/chemidplus/",
+                "drugsatfda.anda_id": ""
+            }
+        }
+    }
 }
