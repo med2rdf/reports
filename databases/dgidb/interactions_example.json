@@ -1,8 +1,0 @@
-{
-  "gene_concept_id":  "hgnc:7989",
-  "interaction_source_db_name":  "JAX-CKB",
-  "interaction_source_db_version":  "5-Jun-23",
-  "interaction_type": null,
-  "interaction_score":  0.065654977,
-  "drug_concept_id":  "rxcui:1601374"
-}
