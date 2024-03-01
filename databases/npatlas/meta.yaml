@@ -2,19 +2,19 @@ name: "The Natural Products Atlas"
 overview: "The Natural Products Atlas is a database of all small molecules discovered from bacteria and fungi. It is designed to provide a central repository for all naturally occuring microbial compounds as a resource for researchers in the area of natural products science. https://www.npatlas.org/faq"
 statistics:
   - category: "Compounds (TODO: BioLinkと対応)"
-    number: 33372
+    count: 33372
   - category: "Bacterial Compounds (TODO: BioLinkと対応)"
-    number: 13068
+    count: 13068
   - category: "Fungal Compounds (TODO: BioLinkと対応)"
-    number: 20304
+    count: 20304
   - category: "Clusters (TODO: BioLinkと対応)"
-    number: 9806
+    count: 9806
   - category: "Nodes (TODO: BioLinkと対応)"
-    number: 6540
+    count: 6540
   - category: "Bacterial Genera (TODO: BioLinkと対応)"
-    number: 378
+    count: 378
   - category: "Fungal Genera (TODO: BioLinkと対応)"
-    number: 822
+    count: 822
 category: "secondary"
 sources:
   - "各レコードは論文から取得しているっぽい、その場合どう書くか。"
@@ -26,7 +26,7 @@ maintainers:
     contact: "https://www.npatlas.org/contact"
 license: "CC BY 4.0"
 versions:
-    - number: "v2023_06"
+    - version: "v2023_06"
 external_links:
   - file_name: "NPAtlas_download_2023_06.tsv"
     file_type: "tsv"

@@ -19,7 +19,7 @@
             "type": "string",
             "description": "収載されているエンティティの種類（TODO: BioLinkのカテゴリーを極力採用してenumにする）"
           },
-          "number": {
+          "count": {
             "type": "integer",
             "description": "収載されているエンティティの数"
           },
@@ -29,7 +29,7 @@
             "description": "収載されているエンティティに対応付けられるオントロジーのリスト"
           }
         },
-        "required": ["category", "number"]
+        "required": ["category", "count"]
       }
     },
     "category": {
@@ -81,7 +81,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "number": {
+          "version": {
             "type": "string"
           },
           "release_date": {
@@ -89,7 +89,7 @@
             "format": "date"
           }
         },
-        "required": ["number"]
+        "required": ["version"]
       }
     },
     "external_links": {
