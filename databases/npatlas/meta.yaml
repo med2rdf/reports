@@ -4,8 +4,6 @@ overview: "The Natural Products Atlas is a database of all small molecules disco
 statistics:
   - category: "Compounds"
     count: 33372
-    # 片山さんにはhttpにするよう言われそう
-    # https://bioportal.bioontology.org/ontologies/BIOLINK/?p=classes&conceptid=https%3A%2F%2Fw3id.org%2Fbiolink%2Fvocab%2FChemicalEntity の記載に準拠
     uri: "https://w3id.org/biolink/vocab/ChemicalEntity"
   - category: "Bacterial Compounds"
     count: 13068
