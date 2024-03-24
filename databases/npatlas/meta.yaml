@@ -1,60 +1,56 @@
 name: "The Natural Products Atlas"
+url: "https://www.npatlas.org/"
 overview: "The Natural Products Atlas is a database of all small molecules discovered from bacteria and fungi. It is designed to provide a central repository for all naturally occuring microbial compounds as a resource for researchers in the area of natural products science. https://www.npatlas.org/faq"
 statistics:
-  - category: "Compounds (TODO: BioLinkと対応)"
+  - category: "Compounds"
     count: 33372
-  - category: "Bacterial Compounds (TODO: BioLinkと対応)"
+    # 片山さんにはhttpにするよう言われそう
+    # https://bioportal.bioontology.org/ontologies/BIOLINK/?p=classes&conceptid=https%3A%2F%2Fw3id.org%2Fbiolink%2Fvocab%2FChemicalEntity の記載に準拠
+    uri: "https://w3id.org/biolink/vocab/ChemicalEntity"
+  - category: "Bacterial Compounds"
     count: 13068
-  - category: "Fungal Compounds (TODO: BioLinkと対応)"
+  - category: "Fungal Compounds"
     count: 20304
-  - category: "Clusters (TODO: BioLinkと対応)"
+  - category: "Clusters"
     count: 9806
-  - category: "Nodes (TODO: BioLinkと対応)"
+  - category: "Nodes"
     count: 6540
-  - category: "Bacterial Genera (TODO: BioLinkと対応)"
+  - category: "Bacterial Genera"
     count: 378
-  - category: "Fungal Genera (TODO: BioLinkと対応)"
+  - category: "Fungal Genera"
     count: 822
-category: "secondary"
+type: "primary"
 sources:
-  - "各レコードは論文から取得しているっぽい、その場合どう書くか。"
+  - type: "article"
 related_articles:
   - doi: "10.1093/nar/gkab941"
   - doi: "10.1021/acscentsci.9b00806"
 maintainers:
   - name: "Linington Research Group in the Department of Chemistry at Simon Fraser University in Vancouver, Canada"
     contact: "https://www.npatlas.org/contact"
-license: "CC BY 4.0"
+license_info:
+  license: CC BY 4.0
+  non_commercial_availability: available
+  commercial_availability: available
+  source_url: "https://www.npatlas.org/terms"
 versions:
+    - version: "v2019_08"
+      release_date: "2019-11-06"
+    - version: "v2019_12"
+      release_date: "2020-01-06"
+    - version: "v2019_12a"
+      release_date: "2020-01-07"
+    - version: "v2020_06"
+      release_date: "2020-08-11"
+    - version: "v2020_06a"
+      release_date: "2020-08-12"
+    - version: "v2020_06b"
+      release_date: "2021-02-06"
+    - version: "v2020_06c"
+      release_date: "2021-05-19"
+    - version: "v2021_08"
+      release_date: "2022-01-30"
     - version: "v2023_06"
-external_links:
-  - file_name: "NPAtlas_download_2023_06.tsv"
-    file_type: "tsv"
-    accessor: "compound_inchikey"
-    xref: "InChI"
-  - file_name: "NPAtlas_download_2023_06.tsv"
-    file_type: "tsv"
-    accessor: "original_reference_doi"
-    xref: "DOI"
-  - file_name: "NPAtlas_download_2023_06.tsv"
-    file_type: "tsv"
-    accessor: "original_reference_pmid"
-    xref: "PubMed"
-  - file_name: "NPAtlas_download_2023_06.tsv"
-    file_type: "tsv"
-    accessor: "mibig_ids"
-    xref: "MIBiG"
-  - file_name: "NPAtlas_download_2023_06.tsv"
-    file_type: "tsv"
-    accessor: "gnps_ids"
-    xref: "GNPS"
-  - file_name: "NPAtlas_download_2023_06.tsv"
-    file_type: "tsv"
-    accessor: "npmrd_ids"
-    xref: "NP-MRD"
-
-
-
-
-
-
+      release_date: "2023-06-29"
+    - version: "v2024_03"
+      release_date: "2024-05-15"

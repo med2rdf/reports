@@ -1,0 +1,185 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "データベース情報。",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "データベースの正式名称。"
+        },
+        "url": {
+            "type": "string",
+            "description": "データベースのURL。"
+        },
+        "overview": {
+            "type": "string",
+            "description": "データベースの概要。"
+        },
+        "statistics": {
+            "type": "array",
+            "description": "データベースに収載されているエンティティの統計情報。",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "description": "収載されているエンティティの種類。"
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "収載されているエンティティの数。"
+                    },
+                    "uri": {
+                        "type": "string",
+                        "description": "収載されているエンティティに対応付けられるURI。"
+                    }
+                },
+                "required": [
+                    "category",
+                    "count"
+                ]
+            }
+        },
+        "type": {
+            "type": "string",
+            "description": "データベースの区分。一次データベース（primary）は既存のデータベースに存在しない情報（製作者による実験結果やデータベース化されていない論文の内容）を含むもの、二次データベース（secondary）は既存のデータベースのみを情報源とするものを指す。",
+            "enum": [
+                "primary",
+                "secondary"
+            ]
+        },
+        "sources": {
+            "type": "array",
+            "description": "データベースの情報源。一次データベースなら実験や論文、二次データベースの場合は既存のデータベースを指す。",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "情報源の種別。",
+                        "enum": [
+                            "experiment",
+                            "article",
+                            "database"
+                        ]
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "情報源のURL。"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "情報源に関する説明。"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            }
+        },
+        "related_articles": {
+            "type": "array",
+            "description": "関連文献。",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "doi": {
+                        "type": "string",
+                        "description": "文献のDOI（Digital Object Identifier）。"
+                    }
+                },
+                "required": [
+                    "doi"
+                ]
+            }
+        },
+        "maintainers": {
+            "type": "array",
+            "description": "データベースの管理者。",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "管理者の名称。"
+                    },
+                    "contact": {
+                        "type": "string",
+                        "description": "管理者の連絡先。"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            }
+        },
+        "license_info": {
+            "type": "object",
+            "description": "ライセンス。",
+            "properties": {
+                "license": {
+                    "type": "string",
+                    "description": "具体的なライセンスの種類。",
+                    "enum": [
+                        "CC BY 4.0",
+                        "CC BY-SA 4.0",
+                        "CC BY-ND 4.0",
+                        "CC BY-NC 4.0",
+                        "CC BY-NC-SA 4.0",
+                        "CC BY-NC-ND 4.0",
+                        "GPL",
+                        "MIT",
+                        "Apache 2.0",
+                        "その他"
+                    ],
+                },
+                "non_commercial_availability": {
+                    "type": "string",
+                    "description": "非商用利用の可能性。",
+                    "enum": [
+                        "available",
+                        "partially available",
+                        "unavailable"
+                    ],
+                },
+                "commercial_availability": {
+                    "type": "string",
+                    "description": "商用利用の可能性。",
+                    "enum": [
+                        "available",
+                        "partially available",
+                        "unavailable"
+                    ],
+                },
+                "source_url": {
+                    "type": "string",
+                    "description": "ライセンスの詳細を記載したURL。"
+                }
+            }
+        },
+        "versions": {
+            "type": "array",
+            "description": "データベースのバージョン更新履歴。",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "version": {
+                        "type": "string",
+                        "description": "バージョン番号。"
+                    },
+                    "release_date": {
+                        "type": "string",
+                        "description": "リリース日。",
+                        "format": "date"
+                    }
+                },
+                "required": [
+                    "version"
+                ]
+            }
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

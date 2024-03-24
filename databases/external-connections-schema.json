@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "description": "外部データベースとの接続方法。",
+    "items": {
+        "type": "object",
+        "properties": {
+            "file_name": {
+                "type": "string",
+                "description": "ファイル名。"
+            },
+            "accessor": {
+                "type": "string",
+                "description": "データ識別子。CSVファイルなら列名、XMLファイルならXPath、RDFファイルならURI、RDBMSならテーブル名とカラム名を指定する。"
+            },
+            "xrefs": {
+                "type": "array",
+                "description": "外部データベースの情報。",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "外部データベースの名称。"
+                        },
+                        "url": {
+                            "type": "string",
+                            "description": "外部データベースのURL。"
+                        },
+                        "file_name": {
+                            "type": "string",
+                            "description": "外部データベースのファイル名。"
+                        },
+                        "accessor": {
+                            "type": "string",
+                            "description": "外部データベースのデータ識別子。CSVファイルなら列名、XMLファイルならXPath、RDFファイルならURI、RDBMSならテーブル名とカラム名を指定する。"
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "url",
+                    "file_name",
+                    "accessor"
+                ]
+            }
+        },
+        "required": [
+            "file_name",
+            "accessor",
+            "xrefs"
+        ]
+    }
+}
